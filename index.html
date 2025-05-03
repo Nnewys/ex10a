@@ -23,15 +23,20 @@
         <label for="fname" class="form-label"><span style="color:red">*</span>Height (cm)
           &nbsp;&nbsp;<img src="./info_btn.png" width="20" height="20"
           onClick="(function(){
-            var modal1 = new bootstrap.Modal(document.getElementById('myModal'));
-            document.getElementById('info-img').src='./height.jpeg';
+            var modal1 = new bootstrap.Modal(document.getElementById('heightModal'));
+            document.getElementById('height-img').src='./height.jpeg';
             modal1.toggle();
           })();return false;"/></label>
         <input type="text" class="form-control" id="myHeight" name="myHeight"/>
     </div>
     <div class="mb-3 mt-3">
         <label for="lname" class="form-label"><span style="color:red">*</span>Inseam (cm)
-        &nbsp;&nbsp;<img src="./info_btn.png" width="20" height="20"/></label>
+        &nbsp;&nbsp;<img src="./info_btn.png" width="20" height="20"
+        onClick="(function(){
+          var modal2 = new bootstrap.Modal(document.getElementById('inseamModal'));
+          document.getElementById('inseam-img').src='./inseam.jpeg';
+          modal2.toggle();
+        })();return false;"/></label>
         <input type="text" class="form-control" id="myInseam" name="myInseam"/>
     </div>
     <button type="submit" class="btn btn-primary">Calculate</button>
@@ -39,12 +44,34 @@
   </form><br><br>
 </div>
 
-<!-- The Modal -->
-<div class="modal" id="myModal">
+<!-- Modal for Height Explanation -->
+<div class="modal fade" id="heightModal" tabindex="-1" aria-labelledby="heightModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="heightModalLabel">How to Measure Height</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
       <div class="modal-body">
-        <img src="./height.jpeg" id="info-img" width="470" height="250"/>
+        <img src="./height.jpeg" id="height-img" width="470" height="250"/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Inseam Explanation -->
+<div class="modal fade" id="inseamModal" tabindex="-1" aria-labelledby="inseamModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="inseamModalLabel">How to Measure Inseam</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="./inseam.png" id="inseam-img" width="470" height="250"/>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
