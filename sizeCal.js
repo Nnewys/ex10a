@@ -3,8 +3,12 @@ function sizeCalculate() {
    let h = (document.getElementById("myHeight").value).trim();
    let i = (document.getElementById("myInseam").value).trim();
    let size;
- 
-   // คำนวณขนาดจักรยานตามประเภทจักรยาน (Mountain bike = 1, Road bike = 2)
+
+   // ตรวจสอบค่า Height และ Inseam ว่ามีค่าเป็นตัวเลขหรือไม่
+   if (isNaN(h) || isNaN(i)) {
+     return 'Please enter valid numbers for height and inseam';
+   }
+
    if (t == "2") { // Road bike (เลือก 2)
      if (h >= 155 && h <= 163) {
        size = '50';
@@ -46,8 +50,6 @@ function sizeCalculate() {
        size = 'N/A';
      }
    }
- 
+
    return size;
- }
- 
- 
+}

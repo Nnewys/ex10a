@@ -13,7 +13,7 @@
 <div class="container mt-3">
   <h2>Calculate your bike size</h2><br>
   
-  <form action="#" method="post" onsubmit="return validateForm()">
+  <form id="bikeForm" onsubmit="return validateForm()">
     <div class="mb-3 mt-3">
       <label class="form-label"><span style="color:red">*</span>Bike type</label>&nbsp;&nbsp;<br>
       <input type="radio" class="form-check-input" id="btype1" name="btypeRad" value="1" checked>&nbsp; Mountain bike &nbsp;&nbsp;
@@ -44,6 +44,24 @@
   </form><br><br>
 </div>
 
+<!-- Modal for Result -->
+<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resultModalLabel">Bike Size Result</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="resultMessage"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Modal for Height Explanation -->
 <div class="modal fade" id="heightModal" tabindex="-1" aria-labelledby="heightModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -71,7 +89,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <img src="./inseam.png" id="inseam-img" width="470" height="250"/>
+        <img src="./inseam.jpeg" id="inseam-img" width="470" height="250"/>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
@@ -79,6 +97,8 @@
     </div>
   </div>
 </div>
+
+<script src="sizeCal.js"></script>
 
 </body>
 </html>
