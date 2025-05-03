@@ -29,7 +29,11 @@ function validateForm() {
 	  document.getElementById("myInseam").focus();
 	  return false;
 	} else if (isNaN(i)) {
-	  alert("Invalid value for inseam!");
+	  alert("Inseam must be a number.");
+	  document.getElementById("myInseam").focus();
+	  return false;
+	} else if (i < 1 || i > 100) {  // ตรวจสอบว่าความยาวช่วงขาอยู่ในช่วง 1 ถึง 100
+	  alert("Inseam must be between 1 and 100 cm.");
 	  document.getElementById("myInseam").focus();
 	  return false;
 	}
