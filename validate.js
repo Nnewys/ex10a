@@ -13,7 +13,11 @@ function validateForm() {
 	  document.getElementById("myHeight").focus();
 	  return false;
 	} else if (isNaN(h)) {
-	  alert("Invalid value for height!");
+	  alert("Height must be a number.");
+	  document.getElementById("myHeight").focus();
+	  return false;
+	} else if (h < 1 || h > 200) {  // ตรวจสอบว่าความสูงอยู่ในช่วง 1 ถึง 200
+	  alert("Height must be between 1 and 200 cm.");
 	  document.getElementById("myHeight").focus();
 	  return false;
 	}
